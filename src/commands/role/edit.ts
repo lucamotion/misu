@@ -18,26 +18,26 @@ import { IUserRepository } from "../../services/UserRepository.js";
 
 export class RoleEditCommand extends ComponentSubcommand<RoleEditCommand> {
   readonly name = "edit";
-  description = "Edits a custom role";
+  description = "edits a custom role";
   readonly options = [
     new CommandStringOption("role", true)
-      .setDescription("The ID of the custom role")
+      .setDescription("the ID of the custom role")
       .useTransformer(
         async (value, context): Promise<Result<Role, KaltsitError>> => {
           const role = await context.guild?.roles.fetch(value);
 
           if (!role) {
-            return err(new KaltsitError("Role not found"));
+            return err(new KaltsitError("role not found"));
           }
 
           return ok(role ?? undefined);
         },
       ),
     new CommandStringOption("name", false).setDescription(
-      "The new name of your custom role",
+      "the new name of your custom role",
     ),
     new CommandStringOption("color", false)
-      .setDescription("The hex color (e.g. #FFFFFF) of your custom role")
+      .setDescription("the new hex color (e.g. #FFFFFF) of your custom role")
       .useTransformer(hexPrecondition),
   ] as const;
   preconditions = [];

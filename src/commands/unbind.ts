@@ -8,8 +8,8 @@ import { IUserRepository } from "../services/UserRepository.js";
 
 export class UnbindCommand extends Command {
   readonly name = "unbind";
-  description = "Unbinds a role from a user.";
-  options = [new RoleOption("role", true).setDescription("The role to unbind")];
+  description = "unbinds a role from a user.";
+  options = [new RoleOption("role", true).setDescription("the role to unbind")];
   preconditions = [];
   contexts = [InteractionContextType.Guild];
 

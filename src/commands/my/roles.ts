@@ -12,7 +12,7 @@ import { IUserRepository } from "../../services/UserRepository.js";
 
 export class MyRolesCommand extends Subcommand {
   readonly name = "roles";
-  description = "Manage your custom roles";
+  description = "manage your custom roles";
   options = [];
   preconditions = [];
 
@@ -61,7 +61,7 @@ export class MyRolesCommand extends Subcommand {
                     color: undefined,
                   }),
               )
-              .setPlaceholder("Select a role")
+              .setPlaceholder("select a role")
               .setOptions(options),
           )
           .toJSON(),
@@ -86,7 +86,7 @@ export class MyRolesCommand extends Subcommand {
 
     await context.send({
       content:
-        roleStrings.length === 0 ? "No roles bound" : roleStrings.join("\n"),
+        roleStrings.length === 0 ? "no roles bound" : roleStrings.join("\n"),
       components,
     });
 

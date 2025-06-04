@@ -12,13 +12,13 @@ import { IUserRepository } from "../../services/UserRepository.js";
 
 export class RoleCreateCommand extends ComponentSubcommand<RoleCreateCommand> {
   readonly name = "create";
-  description = "Create a custom role";
+  description = "create a custom role";
   options = [
     new CommandStringOption("name").setDescription(
-      "The new name of your custom role",
+      "the new name of your custom role",
     ),
     new CommandStringOption("color")
-      .setDescription("The hex color (e.g. #FFFFFF) of your custom role")
+      .setDescription("the hex color (e.g. #FFFFFF) of your custom role")
       .useTransformer(hexPrecondition),
   ];
   preconditions = [];

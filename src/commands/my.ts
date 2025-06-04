@@ -4,7 +4,7 @@ import { MyRolesCommand } from "./my/roles.js";
 
 export class MyCommandGroup extends CommandWithSubcommands {
   readonly name = "my";
-  description = "Container";
+  description = "container";
   contexts = [InteractionContextType.Guild];
   commands: [MyRolesCommand];
 

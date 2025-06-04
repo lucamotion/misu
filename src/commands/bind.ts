@@ -9,10 +9,10 @@ import { IUserRepository } from "../services/UserRepository.js";
 
 export class BindCommand extends Command {
   readonly name = "bind";
-  description = "Binds a role to a user.";
+  description = "binds a role to a user.";
   options = [
-    new RoleOption("role", true).setDescription("The role to bind"),
-    new UserOption("user", true).setDescription("The user to bind the role to"),
+    new RoleOption("role", true).setDescription("the role to bind"),
+    new UserOption("user", true).setDescription("the user to bind the role to"),
   ];
   preconditions = [];
   contexts = [InteractionContextType.Guild];
@@ -29,14 +29,14 @@ export class BindCommand extends Command {
 
     if (customRole !== null) {
       await ctx.send({
-        content: `Role with ID ${role} is already bound to ${user}.`,
+        content: `role ${role} is already bound to ${user}.`,
       });
       return;
     }
 
     await this.userRepository.createRole(role.id, user.id);
     await ctx.send({
-      content: `Role ${role} has been successfully bound to ${user}.`,
+      content: `role ${role} has been successfully bound to ${user}.`,
     });
 
     return;
