@@ -20,5 +20,5 @@ Existing roles can be bound to a user, turning them into custom roles, with `/bi
 - [ ] Weather
 - [ ] Starboards
 - [ ] Social media embeds
-- [ ] Choose/pickone
+- [x] Choose/pickone
 - [ ] [Bangs](https://duckduckgo.com/bang)
